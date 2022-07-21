@@ -1,245 +1,156 @@
-// Quiero crear un test de ingles, que incluya un contador de respuestas correctas, una calculadora que convierte la cantidad de puntos en un resultado final.
+alert("Welcome to the IELTS score calculator! Please write your answers to the questions below, using lowercase letters.");
 
-
-let readingScore = 0;
-let listeningScore = 0;
-let readingPointsCounter = 0;
-let listeningPointsCounter = 0;
-
-
-// //funcion que permite contar la cantidad de respuestas correctas que obtuvo el alumno en el reading
-function calculateReadingPoints () {
-    let numberOfQuestions = 10;
-
-    for (let i = 1; i <= numberOfQuestions; i ++) {
-    let answer1 = prompt ("Answer 1:"); 
-        if (answer1 == "d") {
-            readingPointsCounter ++;}
-        i ++;
-    let answer2 = prompt ("Answer 2:");
-        if (answer2 == "a") {
-            readingPointsCounter ++;}
-        i ++;
-    let answer3 = prompt ("Answer 3:");
-        if (answer3 == "c") {
-            readingPointsCounter ++;}
-        i ++;
-    let answer4 = prompt ("Answer 4:");
-        if (answer4 == "a") {
-            readingPointsCounter ++;}
-        i ++;
-    let answer5 = prompt ("Answer 5:");
-        if (answer5 == "c") {
-            readingPointsCounter ++;}
-        i ++;
-    let answer6 = prompt ("Answer 6:");
-        if (answer6 == "b") {
-            readingPointsCounter ++;}
-        i ++;
-    let answer7 = prompt ("Answer 7:");
-        if (answer7 == "a") {
-            readingPointsCounter ++;}
-        i ++;
-    let answer8 = prompt ("Answer 8:");
-        if (answer8 == "false") {
-            readingPointsCounter ++;}
-        i ++;
-    let answer9 = prompt ("Answer 9:");
-        if (answer9 == "false") {
-            readingPointsCounter ++;}
-        i ++;
-    let answer10 = prompt ("Answer 10:");
-        if (answer10 == "true"){
-            readingPointsCounter ++;}
-        i ++;
+//funcion que pide al alumno que ingrese sus respuestas para las seccion 1
+function getStudentAnswersSection1 () {
+    let getStudentAnswersSection1 = [];
+        while (getStudentAnswersSection1.length < 14) {
+        getStudentAnswersSection1.push(prompt ("SECTION 1:" + "\n"+ "Please enter your answer for question " + (getStudentAnswersSection1.length + 1) + ":"));
+        };
+        return getStudentAnswersSection1;
     }
-    return alert ("You got " + readingPointsCounter + " points in the Reading section."); 
-}
+let studentAnswersSection1 = getStudentAnswersSection1();
 
-
-
- //funcion que permite contar cuantas respuestas correctas obtuvo el alumno en el listening
-
-function calculateListeningPoints () {
-    let numberOfQuestions = 10;
-
-    for (let i = 1; i <= numberOfQuestions; i ++) {
-    let answer1 = prompt ("Answer 1:"); 
-        if (answer1 == "wednesday and friday") {
-            listeningPointsCounter ++;}
-        i ++;
-    let answer2 = prompt ("Answer 2:");
-        if (answer2 == "intermediate") {
-            listeningPointsCounter ++;}
-        i ++;
-    let answer3 = prompt ("Answer 3:");
-        if (answer3 == "beginning") {
-            listeningPointsCounter ++;}
-        i ++;
-    let answer4 = prompt ("Answer 4:");
-        if (answer4 == "mornings") {
-            listeningPointsCounter ++;}
-        i ++;
-    let answer5 = prompt ("Answer 5:");
-        if (answer5 == "125") {
-            listeningPointsCounter ++;}
-        i ++;
-    let answer6 = prompt ("Answer 6:");
-        if (answer6 == "410") {
-            listeningPointsCounter ++;}
-        i ++;
-    let answer7 = prompt ("Answer 7:");
-        if (answer7 == "575") {
-            listeningPointsCounter ++;}
-        i ++;
-    let answer8 = prompt ("Answer 8:");
-        if (answer8 == "1050") {
-            listeningPointsCounter ++;}
-        i ++;
-    let answer9 = prompt ("Answer 9:");
-        if (answer9 == "the school office") {
-            listeningPointsCounter ++;}
-        i ++;
-    let answer10 = prompt ("Answer 10:");
-        if (answer10 == "Mr. Lindsay"){
-            listeningPointsCounter ++;}
-        i ++;
+//funcion que pide al alumno que ingrese sus respuestas para las seccion 2
+function getStudentAnswersSection2 () {
+    let getStudentAnswersSection2 = [];
+        while (getStudentAnswersSection2.length < 13) {
+        getStudentAnswersSection2.push(prompt ("SECTION 2:" + "\n"+ "Please enter your answer for question " + (getStudentAnswersSection2.length + 1) + ":"));
+        };
+        return getStudentAnswersSection2;
     }
-    return alert ("You got " + listeningPointsCounter + " points in the Listening section."); 
-}
+let studentAnswersSection2 = getStudentAnswersSection2();
 
+//funcion que pide al alumno que ingrese sus respuestas para las seccion 3
+function getStudentAnswersSection3 () {
+    let getStudentAnswersSection3 = [];
+        while (getStudentAnswersSection3.length < 13) {
+        getStudentAnswersSection3.push(prompt ("SECTION 3:" + "\n"+ "Please enter your answer for question " + (getStudentAnswersSection3.length + 1) + ":"));
+        };
+        return getStudentAnswersSection3;
+    }
+let studentAnswersSection3 = getStudentAnswersSection3();
+
+
+//funcion que cuenta la cantidad de respuestas correctas en cada seccion.
+function countCorrectAnswers (suggestedAnswers, givenAnswers){
+    let correctAnswers = 0;
+    for (let i = 0; i < givenAnswers.length; i++){
+        if (givenAnswers[i] === suggestedAnswers[i]){
+            correctAnswers++;
+        }
+    }
+    return correctAnswers;
+}
+let countCorrectAnswersSection1 = countCorrectAnswers(readingTest1Section1, studentAnswersSection1);
+let countCorrectAnswersSection2 = countCorrectAnswers(readingTest1Section2, studentAnswersSection2);
+let countCorrectAnswersSection3 = countCorrectAnswers(readingTest1Section3, studentAnswersSection3);
+
+
+
+//funcion que suma la cantidad de respuestas correctas en todo el reading test.
+function sumCorrectAnswers (correctAnswersSection1, correctAnswersSection2, correctAnswersSection3){
+    let sumCorrectAnswers = correctAnswersSection1 + correctAnswersSection2 + correctAnswersSection3;
+    return sumCorrectAnswers;
+}
+let totalReadingPoints = sumCorrectAnswers(countCorrectAnswersSection1, countCorrectAnswersSection2, countCorrectAnswersSection3);
 
 
 
 //funcion que permite calcular el puntaje equivalente segun los puntos obtenidos en el reading test.
-
-function calculateReadingScore () {
-
-let puntajeReading = readingPointsCounter;
-
-if (puntajeReading == 40){
-    alert ('Your Reading score is 9');
-        readingScore = 9;
- } else if (puntajeReading ==  39){
-    alert ('Your Reading score is 8.5');
-        readingScore = 8.5;
-} else if (puntajeReading ==  38){
-    alert ('Your Reading score is 8');
-        readingScore = 8;
-} else if (puntajeReading > 34){
-    alert ('Your Reading score is 7.5');
-        readingScore = 7.5;
-} else if (puntajeReading == 34) {
-    alert ('Your Reading score is 7');
-        readingScore = 7;
-} else if (puntajeReading > 30){
-    alert ('Your Reading score is 6.5');
-        readingScore = 6.5;
-} else if (puntajeReading == 30) {
-    alert ('Your Reading score is 6');
-        readingScore = 6;
-} else if (puntajeReading > 23){
-    alert ('Your Reading score is 5.5');
-        readingScore = 5.5;
-} else if (puntajeReading == 23){
-    alert ('Your Reading score is 5');
-        readingScore = 5;
-} else if (puntajeReading > 15){
-    alert ('Your Reading score is 4.5');
-        readingScore = 4.5;
-} else if (puntajeReading == 15) {
-    alert ('Your Reading score is 4');
-        readingScore = 4;
-} else if (puntajeReading > 11){
-    alert ('Your Reading score is 3.5');
-        readingScore = 3.5;
-} else if (puntajeReading > 8){
-    alert ('Your Reading score is 3');
-        readingScore = 3;
-} else if (puntajeReading > 5){
-    alert ('Your Reading score is 2.5');
-        readingScore = 2.5;
-} else if (puntajeReading < 6){
-    alert ('Estas listo para comenzar a aprender inglés');
-} else {
-    alert ('Por favor, ingresa un valor numerico entre 0 - 40');
-}
-
-}    
+function calculateReadingScore (totalReadingPoints) {
+    let readingScore = 0;
+   if (totalReadingPoints == 40){
+           readingScore = 9;
+    } else if (totalReadingPoints ==  39){
+           readingScore = 8.5;
+   } else if (totalReadingPoints ==  38){
+           readingScore = 8;
+   } else if (totalReadingPoints > 34){
+           readingScore = 7.5;
+   } else if (totalReadingPoints == 34) {
+           readingScore = 7;
+   } else if (totalReadingPoints > 30){
+           readingScore = 6.5;
+   } else if (totalReadingPoints == 30) {
+           readingScore = 6;
+   } else if (totalReadingPoints > 23){
+           readingScore = 5.5;
+   } else if (totalReadingPoints == 23){
+           readingScore = 5;
+   } else if (totalReadingPoints > 15){
+           readingScore = 4.5;
+   } else if (totalReadingPoints == 15) {
+           readingScore = 4;
+   } else if (totalReadingPoints > 11){
+           readingScore = 3.5;
+   } else if (totalReadingPoints > 8){
+           readingScore = 3;
+   } else if (totalReadingPoints > 5){
+           readingScore = 2.5;
+   } else if (totalReadingPoints < 6){
+           readingScore = 2;
+   } else {
+       alert ('Por favor, ingresa un valor numerico entre 0 - 40');
+   }
+   return readingScore;
+   }    
+   
+let resultReadingScore = calculateReadingScore (totalReadingPoints);
 
 
-// funcion que permite calcular el puntaje equivalente segun los puntos obtenidos en el listening test.
+// console.log(countCorrectAnswersSection1);
+// console.log(countCorrectAnswersSection2);
+// console.log(countCorrectAnswersSection3);
+// console.log(totalReadingPoints);
+// console.log(resultReadingScore);
+// alert("You got " + countCorrectAnswersSection1 + " correct answers in section 1, " + countCorrectAnswersSection2 + " correct answers in section 2 and " + countCorrectAnswersSection3 + " correct answers in section 3.\n" + "Your total reading score is " + resultReadingScore + ".");
 
-function calculateListeningScore () {
-
-let puntajeListening = listeningPointsCounter;
-
-if ((puntajeListening == 40) || (puntajeListening == 39)){
-    // alert ('Your Listening score is 9');
-        listeningScore = 9;
- } else if (puntajeListening > 36){
-    // alert ('Your Listening score is 8.5');
-        listeningScore = 8.5;
-} else if (puntajeListening > 34){
-    // alert ('Your Listening score is 8');
-        listeningScore = 8;
-} else if (puntajeListening > 31) {
-    // alert ('Your Listening score is 7.5');
-        listeningScore = 7.5;
-} else if (puntajeListening == 29) {
-    // alert ('Your Listening score is 7');
-        listeningScore = 7;
-} else if (puntajeListening > 25){
-    // alert ('Your Listening score is 6.5');
-        listeningScore = 6.5;
-} else if (puntajeListening > 22) {
-    // alert ('Your Listening score is 6');
-        listeningScore = 6;
-} else if (puntajeListening > 17){
-    // alert ('Your Listening score is 5.5');
-        listeningScore = 5.5;
-} else if (puntajeListening > 15) {
-    // alert ('Your Listening score is 5');
-        listeningScore = 5;
-} else if (puntajeListening > 12){
-    // alert ('Your Listening score is 4.5');
-        listeningScore = 4.5;
-} else if (puntajeListening > 9) {
-    // alert ('Your Listening score is 4');
-        listeningScore = 4;
-} else if (puntajeListening > 7) {
-    // alert ('Your Listening score is 3.5');
-        listeningScore = 3.5;
-} else if (puntajeListening > 5){
-    // alert ('Your Listening score is 3');
-        listeningScore = 3;
-} else if (puntajeListening > 3){
-    // alert ('Your Listening score is 2.5');
-        listeningScore = 2.5;
-} else if (puntajeListening < 3){
-    // alert ('Estas listo para comenzar a aprender inglés');
-} else {
-    alert ('Por favor, ingresa un valor numerico entre 0 - 40');
-}
-
-}
+let students = [
+    { 
+    name: "Cristina",
+    targetScore: 6,
+    readingPointsSection1: 10,
+    readingPointsSection2: 10,
+    readingPointsSection3: 10,
+    sumCorrectAnswers: 30,
+    readingScore: calculateReadingScore (30),
+    },
+    {
+    name: (prompt("What's your name?")),
+    targetScore: (parseInt(prompt("What's your target score?"))),
+    readingPointsSection1: countCorrectAnswersSection1,
+    readingPointsSection2: countCorrectAnswersSection2,
+    readingPointsSection3: countCorrectAnswersSection3,
+    sumCorrectAnswers: sumCorrectAnswers(countCorrectAnswersSection1, countCorrectAnswersSection2, countCorrectAnswersSection3),
+    readingScore: resultReadingScore,
+    }
+];
 
 
 
-//funcion que permite calcular el promedio final de los dos puntajes obtenidos
+const studentsNames = students.map (student => student.name);
+const studentsTargetScore = students.map (student => student.targetScore);
+const studentsReadingPointsSection1 = students.map (student => student.readingPointsSection1);
+const studentsReadingPointsSection2 = students.map (student => student.readingPointsSection2);
+const studentsReadingPointsSection3 = students.map (student => student.readingPointsSection3);
+const studentsSumCorrectAnswers = students.map (student => student.sumCorrectAnswers);
+const studentsReadingScore = students.map (student => student.readingScore);
+const scoresSum = students.reduce ((acumulador, student) => 
+    acumulador + student.readingScore, 0);
+const averageScore = scoresSum / students.length;
 
-function calculateAverageScore (readingScore, listeningScore) {
-    resultado = (readingScore + listeningScore) / 2;  
-    return resultado; 
-} 
 
+console.log(studentsNames);
+console.log(studentsTargetScore);
+console.log(studentsReadingPointsSection1);
+console.log(studentsReadingPointsSection2);
+console.log(studentsReadingPointsSection3);
+console.log(studentsSumCorrectAnswers);
+console.log(studentsReadingScore);
+console.log(scoresSum);
+console.log(averageScore);
 
-// calculateReadingPoints ();
-// calculateReadingScore ();
-// calculateListeningPoints ();
-// calculateListeningScore () ;
-// calculateAverageScore (readingScore, listeningScore);
-// alert ("Your average IELTS score is  " + (resultado)); 
-
+alert ("Your target score is " + students[1].targetScore + ".\n" + "You got " + students[1].readingPointsSection1 + " correct answers in section 1, " +students[1].readingPointsSection2 + " correct answers in section 2 and " + students[1].readingPointsSection3 + " correct answers in section 3.\n" + "In total you have "+ students[1].sumCorrectAnswers + " points in total in Reading test 1." + "\n" + "Your total reading score is " + students[1].readingScore + ".");
+alert("Thank you for using the IELTS calculator.")
 
 

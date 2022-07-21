@@ -1,28 +1,33 @@
-//Practica con objetos, arrays y metodos
 
-class Student {
-    constructor (firstName, targetScore, actualScore) {
-        this.firstName = firstName;
-        this.targetScore = targetScore;
-        this.actualScore = actualScore;
-        this.pass = actualScore >= targetScore;
-        
+//array con las respueas correctas para las secciones 1, 2 y 3 del Reading Test 1
+
+let readingTest1Section1 = ["d", "c", "b", "a", "c", "b", "a", "false", "false", "true", "not given", "true", "not given", "true"]; //14 respuestas
+
+let readingTest1Section2 =["v", "i", "viii", "vi", "iv", "iii", "new employees", "next orientation session", "the orientation", "procedures and policies", "the employee's supervisor", "human resources","March 15"]; //13 respuestas
+
+let readingTest1Section3= ["c", "b", "a", "b", "a", "c", "a", "parallel floats", "a platform", "huge expanses", "many fighters", "recreational", "birch-barck"]; //13 respuestas
+
+
+//array con estudiantes
+let students = [
+    { 
+    name: "Cristina",
+    targetScore: 6,
+    readingPointsSection1: 10,
+    readingPointsSection2: 10,
+    readingPointsSection3: 10,
+    sumCorrectAnswers: 30,
+    readingScore: calculateReadingScore (30),
+    },
+    {
+    name: (prompt("What's your name?")),
+    targetScore: (parseInt(prompt("What's your target score?"))),
+    readingPointsSection1: countCorrectAnswersSection1,
+    readingPointsSection2: countCorrectAnswersSection2,
+    readingPointsSection3: countCorrectAnswersSection3,
+    sumCorrectAnswers: sumCorrectAnswers(countCorrectAnswersSection1, countCorrectAnswersSection2, countCorrectAnswersSection3),
+    readingScore: resultReadingScore,
     }
-}
-
-const studentInfo = [];
-
-studentInfo.push (new Student ("Elena", 7,6));
-studentInfo.push (new Student ("Cristina", 6,5));
-studentInfo.push (new Student ("Berta", 4.5,8));
+];
 
 
-let firstName = prompt ("What's your name?");
-let targetScore = prompt ("What's your target score?");
-let actualScore = prompt ("What's your actual score?");
-studentInfo.push (new Student (firstName, targetScore, actualScore));
-
-
-for (const student of studentInfo) {
-    console.log("Name: " + student.firstName + "\n" + "Your target score: " + student.targetScore + "\n" + "Your actual score: " + student.actualScore + "\n" + "Got the results you wanted?: " + (student.pass));
-}
