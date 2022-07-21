@@ -46,14 +46,12 @@ let countCorrectAnswersSection2 = countCorrectAnswers(readingTest1Section2, stud
 let countCorrectAnswersSection3 = countCorrectAnswers(readingTest1Section3, studentAnswersSection3);
 
 
-
 //funcion que suma la cantidad de respuestas correctas en todo el reading test.
 function sumCorrectAnswers (correctAnswersSection1, correctAnswersSection2, correctAnswersSection3){
     let sumCorrectAnswers = correctAnswersSection1 + correctAnswersSection2 + correctAnswersSection3;
     return sumCorrectAnswers;
 }
 let totalReadingPoints = sumCorrectAnswers(countCorrectAnswersSection1, countCorrectAnswersSection2, countCorrectAnswersSection3);
-
 
 
 //funcion que permite calcular el puntaje equivalente segun los puntos obtenidos en el reading test.
@@ -98,36 +96,15 @@ function calculateReadingScore (totalReadingPoints) {
 let resultReadingScore = calculateReadingScore (totalReadingPoints);
 
 
-// console.log(countCorrectAnswersSection1);
-// console.log(countCorrectAnswersSection2);
-// console.log(countCorrectAnswersSection3);
-// console.log(totalReadingPoints);
-// console.log(resultReadingScore);
-// alert("You got " + countCorrectAnswersSection1 + " correct answers in section 1, " + countCorrectAnswersSection2 + " correct answers in section 2 and " + countCorrectAnswersSection3 + " correct answers in section 3.\n" + "Your total reading score is " + resultReadingScore + ".");
+alert ("Your target score is " + students[1].targetScore + ".\n" + "You got " + students[1].readingPointsSection1 + " correct answers in section 1, " +students[1].readingPointsSection2 + " correct answers in section 2 and " + students[1].readingPointsSection3 + " correct answers in section 3.\n" + "In total you have "+ students[1].sumCorrectAnswers + " in Reading test 1." + "\n" + "Your total reading score is " + students[1].readingScore + ".");
 
-let students = [
-    { 
-    name: "Cristina",
-    targetScore: 6,
-    readingPointsSection1: 10,
-    readingPointsSection2: 10,
-    readingPointsSection3: 10,
-    sumCorrectAnswers: 30,
-    readingScore: calculateReadingScore (30),
-    },
-    {
-    name: (prompt("What's your name?")),
-    targetScore: (parseInt(prompt("What's your target score?"))),
-    readingPointsSection1: countCorrectAnswersSection1,
-    readingPointsSection2: countCorrectAnswersSection2,
-    readingPointsSection3: countCorrectAnswersSection3,
-    sumCorrectAnswers: sumCorrectAnswers(countCorrectAnswersSection1, countCorrectAnswersSection2, countCorrectAnswersSection3),
-    readingScore: resultReadingScore,
-    }
-];
+alert("Thank you for using the IELTS calculator.")
 
 
 
+
+
+//practica funciones de orden superior
 const studentsNames = students.map (student => student.name);
 const studentsTargetScore = students.map (student => student.targetScore);
 const studentsReadingPointsSection1 = students.map (student => student.readingPointsSection1);
@@ -140,17 +117,7 @@ const scoresSum = students.reduce ((acumulador, student) =>
 const averageScore = scoresSum / students.length;
 
 
-console.log(studentsNames);
-console.log(studentsTargetScore);
-console.log(studentsReadingPointsSection1);
-console.log(studentsReadingPointsSection2);
-console.log(studentsReadingPointsSection3);
-console.log(studentsSumCorrectAnswers);
-console.log(studentsReadingScore);
-console.log(scoresSum);
-console.log(averageScore);
 
-alert ("Your target score is " + students[1].targetScore + ".\n" + "You got " + students[1].readingPointsSection1 + " correct answers in section 1, " +students[1].readingPointsSection2 + " correct answers in section 2 and " + students[1].readingPointsSection3 + " correct answers in section 3.\n" + "In total you have "+ students[1].sumCorrectAnswers + " points in total in Reading test 1." + "\n" + "Your total reading score is " + students[1].readingScore + ".");
-alert("Thank you for using the IELTS calculator.")
+
 
 
