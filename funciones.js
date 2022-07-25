@@ -1,5 +1,4 @@
-alert("Welcome to the IELTS score calculator! Please write your answers to the questions below, using lowercase letters.");
-
+//FUNCIONES que no estoy usando por ahora
 //funcion que pide al alumno que ingrese sus respuestas para las seccion 1
 function getStudentAnswersSection1 () {
     let getStudentAnswersSection1 = [];
@@ -52,53 +51,6 @@ function sumCorrectAnswers (correctAnswersSection1, correctAnswersSection2, corr
     return sumCorrectAnswers;
 }
 let totalReadingPoints = sumCorrectAnswers(countCorrectAnswersSection1, countCorrectAnswersSection2, countCorrectAnswersSection3);
-
-
-//funcion que permite calcular el puntaje equivalente segun los puntos obtenidos en el reading test.
-function calculateReadingScore (totalReadingPoints) {
-    let readingScore = 0;
-   if (totalReadingPoints == 40){
-           readingScore = 9;
-    } else if (totalReadingPoints ==  39){
-           readingScore = 8.5;
-   } else if (totalReadingPoints ==  38){
-           readingScore = 8;
-   } else if (totalReadingPoints > 34){
-           readingScore = 7.5;
-   } else if (totalReadingPoints == 34) {
-           readingScore = 7;
-   } else if (totalReadingPoints > 30){
-           readingScore = 6.5;
-   } else if (totalReadingPoints == 30) {
-           readingScore = 6;
-   } else if (totalReadingPoints > 23){
-           readingScore = 5.5;
-   } else if (totalReadingPoints == 23){
-           readingScore = 5;
-   } else if (totalReadingPoints > 15){
-           readingScore = 4.5;
-   } else if (totalReadingPoints == 15) {
-           readingScore = 4;
-   } else if (totalReadingPoints > 11){
-           readingScore = 3.5;
-   } else if (totalReadingPoints > 8){
-           readingScore = 3;
-   } else if (totalReadingPoints > 5){
-           readingScore = 2.5;
-   } else if (totalReadingPoints < 6){
-           readingScore = 2;
-   } else {
-       alert ('Por favor, ingresa un valor numerico entre 0 - 40');
-   }
-   return readingScore;
-   }    
-   
-let resultReadingScore = calculateReadingScore (totalReadingPoints);
-
-
-alert ("Your target score is " + students[1].targetScore + ".\n" + "You got " + students[1].readingPointsSection1 + " correct answers in section 1, " +students[1].readingPointsSection2 + " correct answers in section 2 and " + students[1].readingPointsSection3 + " correct answers in section 3.\n" + "In total you have "+ students[1].sumCorrectAnswers + " in Reading test 1." + "\n" + "Your total reading score is " + students[1].readingScore + ".");
-
-alert("Thank you for using the IELTS calculator.")
 
 
 

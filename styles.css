@@ -1,0 +1,102 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  
+  @font-face {
+    font-family: Gilroy-Heavy;
+    src: url(./Fuentes/Gilroy-Heavy.ttf);
+  }
+  
+  @font-face {
+    font-family: Gilroy-Bold;
+    src: url(/Fuentes/Gilroy-Bold.ttf);
+  }
+  
+  @font-face {
+    font-family: Gilroy-Regular;
+    src: url(/Fuentes/Gilroy-Light.ttf);
+  }
+  .mainTitle{
+    font-family: Gilroy-Heavy;
+    text-align: center;
+    letter-spacing: 5px;
+    color: #291B44;
+    margin: 4rem;
+  }
+  .calculator {
+    text-align: center;
+    width: 60%;
+    margin: 4rem auto;
+    padding: 1rem;
+    border: #02CDD0 4px solid;
+    font-family: Gilroy-Regular;
+  }
+  
+  .calculator .calculator-title {
+    border-bottom: #02CDD0 4px dotted;
+    line-height: 3rem;
+    font-family: Gilroy-Bold;
+  }
+  
+  .calculator .calculator-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  
+  .calculator .calculator-container .calculator-container-description {
+    text-align: center;
+    margin: 1rem 0;
+  }
+  
+  .calculator .calculator-container .calculator-container-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  
+  .calculator .calculator-container .calculator-container-section .calculator-container-skills {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    margin: 1rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  
+  .calculator .calculator-container .calculator-container-section .calculator-container-skills p {
+    margin-bottom: 0;
+  }
+  
+  .calculator .calculator-container .calculator-container-section .calculator-container-skills .calculator-input {
+    max-width: 3rem;
+    margin: 1rem;
+  }
+  
+  .submit-btn{
+    background-color: #02CDD0;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 10px;
+    font-family: "Gilroy-Bold";
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
