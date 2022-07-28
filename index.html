@@ -5,9 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
-    
-    <!-- <script src="./arrays.js"></script>
-    <script src="./funciones.js"></script> -->
+ 
+
     <title>Document</title>
 </head>
 <body>
@@ -19,14 +18,16 @@
                 <div class="calculator-container">
                     <div class="letraDescripcion calculator-container-description">
                         <p>This calculator converts correct answers (out of 40) into an approximate band score (out of 9). <br>
-                        It helps you to know what would be your band score according to a sample test.
+                        It helps you to know what your band score would be according to a sample test.
                         </p>
                     </div>
                     <div class="letraDescripcion calculator-container-section">
                         <form id="formulario-points" class="calculator-container-skills">
                             <p>Reading correct answers (out of 40)</p>
-                            <input id="input-reading" class="calculator-input" type="text" >
-                            <button id="btn" class="submit-btn" type = "button" >CALCULATE</button>
+                            <input id="input-readingPoints" class="calculator-input" type="text" >
+                            <p>Listening correct answers (out of 40)</p>
+                            <input id="input-listeningPoints" class="calculator-input" type="text" >
+                            <button id="btn-score" class="submit-btn" type = "button" >CALCULATE</button>
                         </form>
                     </div>
                 </div>
@@ -41,8 +42,10 @@
                     <div class="letraDescripcion calculator-container-section">
                         <form class="calculator-container-skills" id="formulario-score">
                             <p>Reading Band Score you aim (out of 9)</p>
-                            <input id="needed-score" class="calculator-input" type="text" >
-                            <button id="btn2" class="submit-btn" type = "button" >CALCULATE</button>
+                            <input id="input-readingScore" class="calculator-input" type="text" >
+                            <p>Listening Band Score you aim (out of 9)</p>
+                            <input id="input-listeningScore" class="calculator-input" type="text" >
+                            <button id="btn-points" class="submit-btn" type = "button" >CALCULATE</button>
                         </form>
                     </div>
                 </div>
@@ -51,4 +54,5 @@
     </main>
 </body>
 <script src="./script.js"></script>
+
 </html>

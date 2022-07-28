@@ -71,6 +71,7 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    flex-direction: column;
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
@@ -99,4 +100,12 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     cursor: pointer;
+  }
+
+  #formulario-points h2,
+  #formulario-score h2{
+    color: #291B44;
+    font-family: Gilroy-bold;
+    margin: 1rem;
+    font-size: 20px;
   }
