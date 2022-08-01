@@ -28,7 +28,7 @@ formLogIn.addEventListener ("submit", (event) => {
 //funcion que se encarga de generar el html con la informacion del estudiante
 
 const displayStudentInfo = () => {
-    let container = document.querySelector (".studentAnswers");
+    let container = document.querySelector (".personalDetails");
     arrayStudents.map (el => container.innerHTML += 
     `<h5>Welcome ${el.name}!</h5>
     <p>Your target Score is ${el.targetScore}.</p>
