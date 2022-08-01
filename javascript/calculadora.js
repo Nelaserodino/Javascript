@@ -1,8 +1,9 @@
-//busco la informacion del html
+//obtengo los datos que ingresa el alumno para usar la calculadora
 let studentReadingPoints = document.getElementById("input-readingPoints");
 let studentListeningPoints = document.getElementById("input-listeningPoints");
 let readingNeededScore = document.getElementById("input-readingScore");
 let listeningNeededScore = document.getElementById("input-listeningScore");
+
 
 //configuro el CLICK del boton CALCULATE
 let btnCalculateScore = document.getElementById("btn-score");
@@ -10,7 +11,6 @@ btnCalculateScore.addEventListener("click", handleBtnCalculateScore);
 
 let btnCalculatePoints = document.getElementById("btn-points");
 btnCalculatePoints.addEventListener("click", handleBtnCalculatePoints);
-
 
 
 //funcion que calcula el Reading score segun puntos ingresados
@@ -197,19 +197,25 @@ function getMinListeningPoints (){
 
 // //funcion que controla el click del boton CALCULATE para dar el score 
 function handleBtnCalculateScore (){
-    if  (studentReadingPoints.value != ""){
-    let resultReading = document.createElement ("h2");
     let containerReading = document.getElementById("formulario-points");
-    resultReading.innerText = "Your Reading score is " + getStudentReadingScore ();
-    containerReading.append(resultReading);
-} 
-    if (studentListeningPoints.value != ""){
-    let resultListening = document.createElement ("h2");
     let containerListening = document.getElementById("formulario-points");
-    resultListening.innerText = "Your Listening score is " + getStudentListeningScore ();
-    containerListening.appendChild(resultListening);
+    let resultReading = document.createElement ("h2");
+    let resultListening = document.createElement ("h2");
+    resultListening.innerText = "";
+        
+    if  (studentReadingPoints.value != ""){
+        resultReading.innerText = "";
+        resultReading.innerText = "Your Reading score is " + getStudentReadingScore ();
+        containerReading.append(resultReading);
+} 
+        if (studentListeningPoints.value != ""){
+        resultListening.innerHTML = "";
+        resultListening.innerText = "Your Listening score is " + getStudentListeningScore ();
+        containerListening.appendChild(resultListening);
 }
 }
+
+
 
 // //funcion que controla el click del boton CALCULATE para dar los puntos minimos
 function handleBtnCalculatePoints (){
@@ -226,7 +232,6 @@ function handleBtnCalculatePoints (){
         containerListening.append(outputListening);
 } 
 }
-
 
 
 

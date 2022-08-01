@@ -20,6 +20,36 @@
     font-family: Gilroy-Regular;
     src: url(/Fuentes/Gilroy-Light.ttf);
   }
+ .login{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  text-align: center;
+  margin: 4rem auto;
+  font-family: Gilroy-bold;
+ }
+ .login span{
+    margin: 0.5rem;
+  }
+  .login input{
+    margin: 0.5rem;
+    border: #02CDD0 2px solid;
+    padding: 0.5rem;
+    border-radius: 10px;
+    width: 70%;
+  }
+  
+.studentInfo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  text-align: center;
+  margin: 4rem auto;
+  font-family: Gilroy-bold;
+}
+
   .mainTitle{
     font-family: Gilroy-Heavy;
     text-align: center;
@@ -101,6 +131,12 @@
     letter-spacing: 1px;
     cursor: pointer;
   }
+  .submit-btn:hover{
+    background-color: #291B44;
+  }
+  .submit-btn a{
+    color: white;
+  }
 
   #formulario-points h2,
   #formulario-score h2{
@@ -109,3 +145,127 @@
     margin: 1rem;
     font-size: 20px;
   }
+
+/*test-page */
+
+main {
+  margin: 4rem;
+}
+
+.desplegable {
+  font-family: "Gilroy-Heavy";
+  font-size: 1.6rem;
+  color: #291B44;
+}
+
+.desplegable .dropdown-toggle {
+  color: #02CDD0;
+  font-family: "Gilroy-Bold";
+  font-size: 1.4rem;
+}
+
+.desplegable .dropdown-menu {
+  color: #02CDD0;
+  font-family: "Gilroy-Bold";
+  font-size: 1.4rem;
+}
+
+.test-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.test-page .test-page-article {
+  color: #291B44;
+  font-family: "Gilroy-Regular";
+  font-size: 1.6rem;
+  width: 70%;
+}
+
+.test-page .test-page-article .test-page-article__header {
+  border-bottom: 2px solid black;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  margin-top: 1rem;
+  font-family: "Gilroy-bold";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.test-page .test-page-article .test-page-article__header .stats {
+  text-align: left;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.test-page .test-page-article .test-page-article__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.test-page .test-page-article .test-page-article__content .info-text {
+  margin-top: 1rem;
+}
+
+.test-page .test-page-article .test-page-article__content .info-text span {
+  font-family: "Gilroy-Bold";
+}
+
+.test-page .test-page-article .test-page-article__content .text-description {
+  line-height: 2.5rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+.test-page .test-page-article .test-page-article__content .text-description span {
+  font-family: "Gilroy-Bold";
+}
+
+.test-page .test-page-article .test-page-article__content .card-options {
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.test-page .test-page-article .test-page-article__content .exercise {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 2rem;
+}
+
+.test-page .test-page-article .test-page-article__content .options input{
+ margin: 0.5rem;
+ display: inline-block;
+ width: 4rem;
+ text-align: center;
+}
+
+.personalDetails{
+  width: 30%;
+  margin-left: 3rem;
+  font-family: "Gilroy-bold";
+  font-size: 18px;
+}
+
+

@@ -1,5 +1,14 @@
 // //FUNCIONES que no estoy usando por ahora
 
+
+// //array que almacena las respuestas del test section1, section2 y section3
+// let answersReadingTest1 = ["d", "c", "b", "a", "c", "b", "a", "false", "false", "true", "not given", "true", "not given", "true", "v", "i", "viii", "vi", "iv", "iii", "new employees", "next orientation session", "the orientation", "procedures and policies", "the employee's supervisor", "human resources","March 15","c", "b", "a", "b", "a", "c", "a", "parallel floats", "a platform", "huge expanses", "many fighters", "recreational", "birch-barck"];
+// console.log(answersReadingTest1);
+
+
+
+
+
 // //funcion que pide al alumno que ingrese sus respuestas para las seccion 1
 // function getStudentAnswersSection1 () {
 //     let getStudentAnswersSection1 = [];
